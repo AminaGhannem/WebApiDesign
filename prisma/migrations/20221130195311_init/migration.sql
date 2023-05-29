@@ -17,7 +17,6 @@ CREATE TABLE "Product" (
     "createsAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "name" VARCHAR(255) NOT NULL,
     "belongsToId" TEXT NOT NULL,
-
     CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
 

@@ -9,24 +9,12 @@ const app=express()
 app.use(morgan('dev' ))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-
-// app.use((req,res,next)=>{
-//     res.status(401)
-//     res.send('nope')
-// })
-
 app.get('/',(req,res,next)=>{
-    // console.log('Hello from express')
-    // res.status(200).send('Hello from express')
-     res.json({message:'amina'})
-    // setTimeout(()=>{
-    //     next( new Error('oops'))
-    // },1)
-    
+
+     res.json({message:'amina'})   
 })
 
 app.use('/api',protect,router) 
-
 app.post('/user',createNewUser)
 app.post('/signin',signin)
 

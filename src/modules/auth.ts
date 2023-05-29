@@ -9,15 +9,15 @@ export const hashPassword=(password)=>{
     return bcrypt.hash(password,5)
 }
 
- export const createJWT=(user)=>{
+export const createJWT=(user)=>{
   const token=jwt.sign({
     id:user.id, 
     username:user.username
   }, process.env.JWT_SECRET)
     return token
- }
+}
 
- export const protect=(req,res,next)=>{
+export const protect=(req,res,next)=>{
     const bearer=req.headers.authorization
     if (!bearer){
         res.status(401)
@@ -42,6 +42,6 @@ export const hashPassword=(password)=>{
         res.json({message: 'not valid token'})
         return  
     }
- }
+}
 
  
